@@ -62,7 +62,7 @@ public class JsonFlattener {
      * @param currentPath - Path that represents flat key for each Primitive
      * @param jsonElement - Current Json element that we are traversing
      * @param map - Stores new flat representation of the Json tree
-     * @return String - Nothing
+     * @return - Nothing
      */
     private void flattenerHelper(String currentPath, JsonElement jsonElement, Map<String, JsonPrimitive> map) {
         if (jsonElement.isJsonPrimitive()) { // terminal element
