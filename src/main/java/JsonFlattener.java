@@ -12,7 +12,7 @@ import org.junit.Test;
  * with keys as the path to every terminal value in the JSON structure.
  * Assuming input has no Json array elements, and input Json is valid.
  *
- * @author  Denis.Brinzarei@gmail.com
+ * @author  Denis.Brinzarei
  * @version 1.0
  * @since   2021-01-10
  */
