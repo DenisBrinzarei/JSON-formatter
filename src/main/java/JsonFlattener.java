@@ -41,19 +41,23 @@ public class JsonFlattener {
      * Along the way we are keeping track of the path to the terminal element (e.g. JsonPrimitive), when we hit JsonPrimitive, we set it as a new value for the created flat path.
      *
      * @param args - Json to be flatten
-     * @return String - Represents flat Json
+     * @return - Nothing
      * @exception Exception - On error.
      */
-    public String flattenJson(String[] args) {
+    public static void main(String[] args) {
+        JsonFlattener jf = new JsonFlattener();
+        Map<String, JsonPrimitive> flatMap = new HashMap<>();
+        String result;
+
         try {
-            Map<String, JsonPrimitive> flatMap = new HashMap<>();
-            flattenerHelper(new String(), JsonParser.parseString(args[0]), flatMap);
-            return GSON.toJson(flatMap);
+            jf.flattenerHelper(new String(), JsonParser.parseString(args[0]), flatMap);
+            result = GSON.toJson(flatMap);
         } catch (Exception e) {
             System.out.println("Unable to flatten given JSON: " + originalJson);
             e.printStackTrace();
-            return null;
+            return;
         }
+        System.out.println(GSON.toJson(result));
     }
 
     /**
